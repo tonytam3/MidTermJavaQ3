@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class MidTermJavaQ3 {
+  public static void main(String[] args) {
+    int fiboArray[]=new int[50];
+
+    fiboArray[0]=1;
+    fiboArray[1]=2;
+
+    int result = 0;
+
+    for(int n = 2;n<fiboArray.length; n++){
+      if(result<1000){
+        result = fiboArray[n-1]+fiboArray[n-2];
+        if(result<1000){fiboArray[n]=result;}
+      }
+    }
+
+    int sum=0;
+
+    for(int n=0; n<fiboArray.length; n++){
+
+      if(fiboArray[n]!=0){
+        System.out.print(fiboArray[n]+" ");
+      }
+
+      if(fiboArray[n]%2!=0){
+        sum=sum+fiboArray[n];
+      }
+    }
+
+    System.out.print("\nThe sum of all odd number: "+sum);
+  }
+}
